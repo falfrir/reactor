@@ -7,7 +7,7 @@ const TopPosts = () => (
   <Query
     query={gql`
       query {
-        allPosts(orderBy: updatedAt_DESC, first: 7){
+        allPosts(orderBy: updatedAt_DESC, first: 10){
           id
           title
           user {
@@ -24,7 +24,7 @@ const TopPosts = () => (
       if (error) return <p>Error :(</p>;
 
       return (
-        <ul key='topPosts'>
+        <ul key='topPosts' id='topPosts'>
           {data.allPosts.map(({ id, title, user }) => (
             <li key={id}><Link  to={`/post/${id}`}>{user ? user.name : 'incognito'}, {title ? title : '***'}</Link></li>
           ))}
