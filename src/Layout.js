@@ -22,7 +22,7 @@ const styles = {
         textDecoration: 'none',
     },
     linkActive: {
-        color: 'amber',
+        color: 'red',
         textDecoration: 'none',
     },
 };
@@ -32,12 +32,12 @@ const Layout = ({children}) => (
         <Drawer variant="permanent" anchor="left">
             <List component='nav'>
                 <NavLink
-                    to='/'
+                    to='/users'
                     style={{textDecoration: 'none'}}
                     activeStyle={styles.linkActive}
                 >
                     <ListItem button style={styles.link}>
-                        <ListItemText primary="Home"/>
+                        <ListItemText primary="Users"/>
                     </ListItem>
                 </NavLink>
                 <NavLink
